@@ -19,13 +19,6 @@ aiBoard.place(new Ship(4), 1, 0, "horizontal", ".aiCell");
 aiBoard.place(new Ship(3), 2, 0, "horizontal", ".aiCell");
 aiBoard.place(new Ship(2), 3, 0, "horizontal", ".aiCell");
 
-let won = false;
-
-
-console.log(aiBoard);
-console.log(playerBoard);
-
-
 /*
 start button
 -> modal popup [ todo ]
@@ -40,7 +33,7 @@ game:
 
 
 function turn(){
-    aiBoard.showShip();
+    aiBoard.showShips();
     if(playerBoard.allSunk()){
         document.getElementById("result").innerHTML = "ai won";
     } else if(aiBoard.allSunk()){

@@ -3,7 +3,7 @@ export default class Ship{
         this.len = len;
         this.hits = 0;
         this.sunk = false;
-        // this.cords = Array(len);
+        this.cords = Array(len);
     }
 
     hit(){

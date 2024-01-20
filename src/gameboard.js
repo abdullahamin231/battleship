@@ -12,7 +12,7 @@ export default class Gameboard {
         this.index = 0;
         this.actualShips = [];
     }
-    showShip(){
+    showShips(){
         for(let i = 0; i < this.actualShips.length; i++){
             console.log(this.actualShips[i]);
         }
@@ -26,24 +26,22 @@ export default class Gameboard {
             for (let i = y; i < y + ship.len; i++) {
                 const cell = document.querySelector(`${which}[data-x="${x}"][data-y="${i}"]`);
                 cell.classList.add("ship");
-                this.ships.push([x, i]);
+                this.ships.push([x, i, currentIndex]);
             }
         } else {
             for (let i = x; i < x + ship.len; i++) {
                 const cell = document.querySelector(`${which}[data-x="${i}"][data-y="${y}"]`);
                 cell.classList.add("ship");
-                this.ships.push([i, y]);
+                this.ships.push([i, y, currentIndex]);
             }
         }
-    
         this.index += 1;
     }
-
     
     hitted(x, y) {
         for (let i = 0; i < this.ships.length; i++) {
             if (this.ships[i][0] == x && this.ships[i][1] == y) {
-                // this.actualShips[i].hits += 1;
+                this.actualShips[this.ships[i][2]].hits += 1;
                 return true;
             }
         }
