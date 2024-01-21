@@ -1,44 +1,123 @@
 body{
     margin: 0;
     padding: 0;
-    background-color: #a0a0a0;    
+    background-color: #ffccccc5;    
+    font-family: 'Poppins';
+    height: 100vh;
+}
+
+header{
+    display: grid;
+    font-weight: bolder;
+    color: #1e1e1e;
+    align-items: center;
+    place-content: center;
+    background-color: #d33f3f;
+    gap: .5rem;
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+}
+#btns{
+    display: flex; flex-direction: row; gap: 1rem; align-items: center; justify-content: center;
+}
+h2{
+    font-size: 4rem;
+    padding: 0; margin: 0;
+}
+
+/* CSS */
+header button {
+  background: #FF4742;
+  border: 1px solid #FF4742;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  display: inline-block;
+font-family: 'Poppins';
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 16px;
+  min-height: 40px;
+  outline: 0;
+  padding: 12px 14px;
+  text-align: center;
+  text-rendering: geometricprecision;
+  text-transform: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+}
+
+header button:hover,
+header button:active {
+  background-position: 0 0;
+  color: #fff8f8;
+}
+
+header button:active {
+  opacity: .8;
+}
+
+footer{
+    margin-top: 1rem;
+    display: grid;
+    font-weight: bolder;
+    font-size: 2rem;
+    color: #1e1e1e;
+    align-items: center;
+    place-content: center;
+    background-color: #d33f3f;
 }
 main{
-    margin: 1rem 15rem;
-    display: flex; flex-direction: row; align-items: center;
-    gap: 2rem;
+    display: grid; place-items: center;
+}
+#big{
+    display: flex; flex-direction: row; gap: 3rem;
 }
 #ai, #player{
-    width: 630px;
-    height: 430px;
+    width: 720px;
+    height: 520px;
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(10, 1fr);
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
+#names{
+    display: flex; flex-direction: row; gap: 30rem;
+    font-size: larger;
+}
+#names p{
+    padding: 0; margin: 0;
+}
 #ai{
-    background-color: #bba4a4;
+    background-color: #ff4f4f6b;
 }
 #player{
-    border-top: 1px solid black;
-    background-color: #cd6f6f;
+    border-top: .8px solid rgba(0, 0, 0, 0.259);
+    background-color: #bba4a46b;
 }
 
+.maybe{
+    background-color: rgb(53, 59, 61);
+}
 .cell{
-    width: 60px; height: 40px; border: 1px solid rgba(0, 0, 0, 0.403);
+    width: 70px; height: 50px; border: 1px solid rgba(0, 0, 0, 0.403);
 }
 #ai .cell:hover{
-    background-color: rgba(0, 0, 0, 0.226);
+    background-color: rgba(184, 35, 35, 0.633);
 }
 
 /*ship is only to identify lpayers ships*/
-.ship{
-    background-color: rgb(52, 52, 52);
+#player .ship{
+    background-color: rgba(45, 45, 45, 0.588);
 }
 
 .hit{
-    background-color: rgb(234, 241, 255);
+    background-color: rgb(0, 122, 37);
 }
 .miss{
     background-color: rgb(255, 50, 32);

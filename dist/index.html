@@ -13,11 +13,26 @@
     <link rel="stylesheet" href="../src/style.css" />
   </head>
   <body>
+    <header>
+      <h2>BattleShip</h2>
+      <div id="btns"><button id="start">Start</button>
+        <button id="again">Play Again</button>
+        <button id="dir">Change Direction</button></div>
+
+    </header>
     <main>
-      <div id="player"></div>
-      <div id="ai"></div>
-      <div id="result"></div>
+      <div id="names">
+        <p>Player</p>
+        <p>Computer</p>
+      </div>
+      <div id="big">
+        <div id="player"></div>
+        <div id="ai"></div>
+      </div>
     </main>
+    <footer>
+      <div id="result"></div>
+    </footer>
     <script src="./index.js"></script>
   </body>
 </html>

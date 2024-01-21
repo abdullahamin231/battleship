@@ -17,6 +17,16 @@ export default class Gameboard {
             console.log(this.actualShips[i]);
         }
     }
+    reset(){
+        for (let i = 0; i < 10; i++) {
+            for (let j = 0; j < 10; j++) {
+                this.board.push([i, j]);
+            }
+        }
+        this.ships = [];
+        this.index = 0;
+        this.actualShips = [];
+    }
 
     place(ship, x, y, direction, which) {
         const currentIndex = this.index; // Use a separate variable
@@ -58,21 +68,19 @@ export default class Gameboard {
             cell.classList.add("hit");
             hit = true;
         }
-        console.log(hit);
         if (!hit) {
             cell.classList.add("miss");
         }
     }
 
-    allSunk() {
-        console.log("Checking for winner");
-        for(let i = 0; i < this.actualShips.length; i++){
-            if(this.actualShips[i].hits != this.actualShips[i].len){
+    allShipsHit(ships) {
+        for(const ship of ships){
+            if(!ship.classList.contains("hit"))
                 return false;
-            }
         }
         return true;
     }
+    
 
     print() {
         for (let i = 0; i < this.board.length; i++) {
